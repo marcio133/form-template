@@ -34,4 +34,8 @@ export class AppComponent implements OnInit {
       opcao: new FormControl(null,  Validators.required),
     });
   }
+
+  onSubmit(){
+    console.log(this.myForm.value);
+  }
 }

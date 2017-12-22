@@ -1,20 +1,200 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<ng-template #content let-c="close" let-d="dismiss" class="">
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <img class="img-fluid" src="assets/img/logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>Olá, nós somos a Guash e adoraríamos ajudá-lo com o seu projeto, que tal fazer um orçamento com a gente? Vamos lá?</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <button class="btn btn-success" (click)="c('Close click')">Comecar</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<section class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="exampleInputEmail1"><span>1-></span>Qual o seu nome?*</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"><span>2-></span>Tipo de Projeto</label>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  Option one is this and that&mdash;be sure to include why it's great
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  Option two can be something else and selecting it will deselect option one
+                </label>
+            </div>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"><span>3-></span>Branding</label>
+            <small id="brandingHelp" class="form-text text-muted">Caso vc deseje uma nova marca ou um re-design da sua marca ja existente, sinalize uma das opções, caso não seja nenhum dos dois casos</small>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios1" value="option1" checked>
+                  Marca
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios2" value="option2">
+                  Re-design de Marca
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios3" value="option3">
+                  Nao preciso de marca
+                </label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="myForm.get('opcao').value=='option1'">
+            <label for="exampleInputEmail1"><span>4-></span>Qual a papelaria que você irá precisar para  a sua marca?</label>
+            <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>A</span> Cartao de Visita
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>B</span> Papel Timbrado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">
+                          <span>C</span> Envelope Carta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <span>D</span> Pasta
+                          </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>E</span> Carimbo
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>F</span> Crachat
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">
+                          <span>G</span> Pasta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <span>H</span> Carimbo
+                          </label>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"><span>5-></span>Escolha entre estes materiais que podem ser específicos para o seu projeto.</label>
+            <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>A</span> Cartao de Visita
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>B</span> Papel Timbrado
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">
+                          <span>C</span> Envelope Carta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <span>D</span> Pasta
+                          </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>E</span> Carimbo
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <span>F</span> Crachat
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">
+                          <span>G</span> Pasta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <span>H</span> Carimbo
+                          </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"><span>6-></span>Caso você tenha optado por desenvolvimento de Rotulo, Caixa/Embalagem ou sacola, nos fale um pouco sobre, Quantos tamanhos e quais as variações exatamente de tipos/sabores/cores/, e finalidades.</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <small class="form-text text-muted">Quanto mais detalhada for esta informação, poderemos cotar o valor do seu projeto com mais precisão. Caso exista alguma variável técnica que a embalagem precise alcançar, como ir no microondas, ser impermeável para congelar e afins, aqui é o lugar perfeito para você falar sobre.</small>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </div>
+        </div>
+    </form>
+</section>

@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
   createForm(){
     this.myForm = new FormGroup ({
       opcao: new FormControl(null,  Validators.required),
+      opcaoRadio: new FormControl("2",  Validators.required),
     });
   }
 

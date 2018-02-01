@@ -19,7 +19,8 @@
         "prefix": "app",
         "styles": [
             "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-            "styles.css"
+            "./assets/font-awsome/web-fonts-with-css/css/fontawesome-all.min.css",
+            "styles.scss"
         ],
         "scripts": [
             "../node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -54,7 +55,7 @@
         }
     },
     "defaults": {
-        "styleExt": "css",
+        "styleExt": "scss",
         "component": {}
     }
 }

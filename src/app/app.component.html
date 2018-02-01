@@ -24,14 +24,19 @@
     </div>
 </ng-template>
 <section class="container">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="assets/img/logo_mini.png" alt="Logo Mini">
+        </div>
+    </div>
+    <form class="primary-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>1-></span>Qual o seu nome?*</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Qual o seu nome?*</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
             <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>2-></span>Tipo de Projeto</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Tipo de Projeto</label>
             <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -47,7 +52,7 @@
             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>3-></span>Branding</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Branding</label>
             <small id="brandingHelp" class="form-text text-muted">Caso vc deseje uma nova marca ou um re-design da sua marca ja existente, sinalize uma das opções, caso não seja nenhum dos dois casos</small>
             <div class="form-check">
                 <label class="form-check-label">
@@ -69,7 +74,7 @@
             </div>
         </div>
         <div class="form-group" *ngIf="myForm.get('opcao').value=='option1'">
-            <label for="exampleInputEmail1"><span>4-></span>Qual a papelaria que você irá precisar para  a sua marca?</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Qual a papelaria que você irá precisar para  a sua marca?</label>
             <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
             <div class="row">
                 <div class="col-md-6">
@@ -128,7 +133,7 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>5-></span>Escolha entre estes materiais que podem ser específicos para o seu projeto.</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Escolha entre estes materiais que podem ser específicos para o seu projeto.</label>
             <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
             <div class="row">
                 <div class="col-md-6">
@@ -187,7 +192,7 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>6-></span>Caso você tenha optado por desenvolvimento de Rotulo, Caixa/Embalagem ou sacola, nos fale um pouco sobre, Quantos tamanhos e quais as variações exatamente de tipos/sabores/cores/, e finalidades.</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Caso você tenha optado por desenvolvimento de Rotulo, Caixa/Embalagem ou sacola, nos fale um pouco sobre, Quantos tamanhos e quais as variações exatamente de tipos/sabores/cores/, e finalidades.</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             <small class="form-text text-muted">Quanto mais detalhada for esta informação, poderemos cotar o valor do seu projeto com mais precisão. Caso exista alguma variável técnica que a embalagem precise alcançar, como ir no microondas, ser impermeável para congelar e afins, aqui é o lugar perfeito para você falar sobre.</small>
         </div>

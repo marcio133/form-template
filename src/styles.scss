@@ -9,8 +9,33 @@ $base: #f4f4f4;
     color: $default-color;
 }
 
+.container {
+    padding: 20px 10px;
+}
+
+.logo {
+    max-width: 20%;
+}
+
+.btn-success {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+        background-color: $primary-shadow;
+        border-color: $primary-shadow;
+    }
+    &:active,
+    &:focus {
+        background-color: $primary-shadow !important;
+        box-shadow: 0 0 0 0.2rem $primary-color !important;
+    }
+}
+
 .primary-form {
     .form-group {
+        [type="text"] {
+            color: $primary-shadow;
+        }
         label {
             span {
                 font-size: 18px;

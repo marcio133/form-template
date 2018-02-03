@@ -9,6 +9,25 @@ $base: #f4f4f4;
     color: $default-color;
 }
 
+@mixin footer-font() {
+    font-size: 15px;
+    color: $base;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $primary-color;
+    @include footer-font();
+    a {
+        @include footer-font();
+    }
+    .vers {
+        @include footer-font();
+        float: right
+    }
+}
+
 .container {
     padding: 20px 10px;
 }

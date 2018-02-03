@@ -24,102 +24,107 @@
     </div>
 </ng-template>
 <section class="container">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="assets/img/logo_mini.png" alt="Logo Mini" class="logo">
+        </div>
+    </div>
+    <form class="primary-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>1-></span>Qual o seu nome?*</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Qual o seu nome?*</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu nome">
             <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>2-></span>Tipo de Projeto</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Tipo de Projeto</label>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  Option one is this and that&mdash;be sure to include why it's great
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                Opção um &mdash;Tenha certeza antes de marcar isso.
                 </label>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Option two can be something else and selecting it will deselect option one
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Opção dois tambem pode ser marcada.
                 </label>
             </div>
             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>3-></span>Branding</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Branding</label>
             <small id="brandingHelp" class="form-text text-muted">Caso vc deseje uma nova marca ou um re-design da sua marca ja existente, sinalize uma das opções, caso não seja nenhum dos dois casos</small>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios1" value="option1" checked>
+                <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios3" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios3">
                   Marca
                 </label>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios2" value="option2">
+                <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios4" value="option2">
+                <label class="form-check-label" for="exampleRadios4">
                   Re-design de Marca
                 </label>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios3" value="option3">
+                <input class="form-check-input" formControlName="opcao" type="radio" name="opcao" id="exampleRadios5" value="option3">
+                <label class="form-check-label" for="exampleRadios5">
                   Nao preciso de marca
                 </label>
             </div>
         </div>
         <div class="form-group" *ngIf="myForm.get('opcao').value=='option1'">
-            <label for="exampleInputEmail1"><span>4-></span>Qual a papelaria que você irá precisar para  a sua marca?</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Qual a papelaria que você irá precisar para  a sua marca?</label>
             <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        <span>A</span> Cartao de Visita
+                        <input type="checkbox" class="form-check-input" id="question4A">
+                        <label class="form-check-label" for="question4A">
+                            <span>A</span> Cartao de Visita
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4B">
+                        <label class="form-check-label" for="question4B">
                         <span>B</span> Papel Timbrado
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4C">
+                        <label class="form-check-label" for="question4C">
                           <span>C</span> Envelope Carta
                         </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4D">
+                        <label class="form-check-label" for="question4D">
                             <span>D</span> Pasta
                           </label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4E">
+                        <label class="form-check-label" for="question4E">
                         <span>E</span> Carimbo
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4F">
+                        <label class="form-check-label" for="question4F">
                         <span>F</span> Crachat
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4G">
+                        <label class="form-check-label" for="question4G">
                           <span>G</span> Pasta
                         </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question4H">
+                        <label class="form-check-label" for="question4H">
                             <span>H</span> Carimbo
                           </label>
                     </div>
@@ -128,57 +133,58 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>5-></span>Escolha entre estes materiais que podem ser específicos para o seu projeto.</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Escolha entre estes materiais que podem ser específicos para o seu projeto.</label>
             <small class="form-text text-muted">Podem ser selecionadas várias opções</small>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        <span>A</span> Cartao de Visita
-                      </label>
+                        <input type="checkbox" class="form-check-input" id="question5A">
+                        <label class="form-check-label" for="question5A">
+                            <span>A</span> Cartao de Visita
+                        </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5B">
+
+                        <label class="form-check-label" for="question5B">
                         <span>B</span> Papel Timbrado
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5C">
+                        <label class="form-check-label" for="question5C">
                           <span>C</span> Envelope Carta
                         </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5D">
+                        <label class="form-check-label" for="question5D">
                             <span>D</span> Pasta
                           </label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5E">
+                        <label class="form-check-label" for="question5E">
                         <span>E</span> Carimbo
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5F">
+                        <label class="form-check-label" for="question5F">
                         <span>F</span> Crachat
                       </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5G">
+                        <label class="form-check-label" for="question5G">
                           <span>G</span> Pasta
                         </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input" id="question5H">
+                        <label class="form-check-label" for="question5H">
                             <span>H</span> Carimbo
                           </label>
                     </div>
@@ -187,7 +193,7 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1"><span>6-></span>Caso você tenha optado por desenvolvimento de Rotulo, Caixa/Embalagem ou sacola, nos fale um pouco sobre, Quantos tamanhos e quais as variações exatamente de tipos/sabores/cores/, e finalidades.</label>
+            <label for="exampleInputEmail1"><span><i class="fas fa-arrow-right"></i></span>Caso você tenha optado por desenvolvimento de Rotulo, Caixa/Embalagem ou sacola, nos fale um pouco sobre, Quantos tamanhos e quais as variações exatamente de tipos/sabores/cores/, e finalidades.</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             <small class="form-text text-muted">Quanto mais detalhada for esta informação, poderemos cotar o valor do seu projeto com mais precisão. Caso exista alguma variável técnica que a embalagem precise alcançar, como ir no microondas, ser impermeável para congelar e afins, aqui é o lugar perfeito para você falar sobre.</small>
         </div>
@@ -198,3 +204,11 @@
         </div>
     </form>
 </section>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center footer">
+            © 2017 Copyright: <a href="https://github.com/marcio133">Márcio de Paula</a> <span class="vers">Version 1.0</span>
+        </div>
+    </div>
+    <!--/.Copyright-->
+</footer>

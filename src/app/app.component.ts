@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +12,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'app';
   myForm: FormGroup;  
+  modalRef: BsModalRef;
   @ViewChild('content') private modal : ElementRef; 
-  
-  constructor(private modalService: NgbModal) {}
+
+
+  constructor(private modalService: NgbModal, private modalServiceNgx: BsModalService) {}
 
   ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -37,6 +41,6 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.myForm.value);
+    this.modalRef = this.modalServiceNgx.show(SuccessModalComponent);
   }
 }

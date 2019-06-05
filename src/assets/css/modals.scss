@@ -1,0 +1,32 @@
+.modal-success {
+    height: 160px;
+    align-items: center;
+    background-color: $primary-color;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(143, 143, 143, 0.61);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(143, 143, 143, 0.61);
+    box-shadow: 0px 2px 3px 0px rgba(143, 143, 143, 0.61);
+    border: 1px solid $primary-color;
+    .modal-success-icon {
+        width: 100%;
+        text-align: center;
+        i {
+            color: $base;
+            font-size: 50pt;
+        }
+    }
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        padding-top: 0px;
+        opacity: 1;
+        span {
+            color: $base;
+        }
+    }
+}
+
+.modal-footer {
+    display: block;
+    border: none;
+}

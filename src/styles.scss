@@ -1,12 +1,11 @@
-$default-color: #3D3D3D;
-$primary-color: #53BB96;
-$primary-shadow: #357c63;
-$base: #f4f4f4;
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import 'assets/css/colors';
+@import 'assets/css/modals';
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&display=swap');
 * {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 24px;
     color: $default-color;
+    font-weight: 300;
 }
 
 @mixin footer-font() {
@@ -32,6 +31,10 @@ $base: #f4f4f4;
     padding: 20px 10px;
 }
 
+h4 {
+    font-weight: 700;
+}
+
 .logo {
     max-width: 20%;
 }
@@ -41,8 +44,13 @@ $base: #f4f4f4;
 }
 
 .modal-dialog {
-    width: 60%;
+    width: 50%;
     max-width: none;
+}
+
+.btn {
+    padding: 3px 15px;
+    font-size: 13pt;
 }
 
 .btn-success {
@@ -55,7 +63,12 @@ $base: #f4f4f4;
     &:active,
     &:focus {
         background-color: $primary-shadow !important;
-        box-shadow: 0 0 0 0.2rem $primary-color !important;
+        box-shadow: 0 0 0 0.1rem $primary-color !important;
+    }
+    i {
+        color: $base;
+        font-size: 13pt;
+        margin-right: 7px;
     }
 }
 

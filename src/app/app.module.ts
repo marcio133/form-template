@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { InitialScreenComponent } from './initial-screen/initial-screen.component';
+import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 const appRoutes: Routes = [
@@ -16,7 +18,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    InitialScreenComponent
+    InitialScreenComponent,
+    SuccessModalComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +28,13 @@ const appRoutes: Routes = [
       { enableTracing: true }),
       NgbModule.forRoot(),
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      ModalModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    SuccessModalComponent
+  ]
 })
 export class AppModule { }
